@@ -46,23 +46,28 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">ACL 2023 Tutorial: Retrieval-based LMs and Applications</h1>
+
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://akariasai.github.io/">Akari Asai</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://shmsw25.github.io/">Sewon Min</a><sup>1,2</sup>,</span>
+              <a href="https://shmsw25.github.io/">Sewon Min</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://www.cs.princeton.edu/~zzhong/">Zexuan Zhong</a><sup>2,3</sup>,
+              <a href="https://www.cs.princeton.edu/~zzhong/">Zexuan Zhong</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://www.cs.princeton.edu/~danqic/">Danqi Chen</a><sup>3</sup>,
+              <a href="https://www.cs.princeton.edu/~danqic/">Danqi Chen</a><sup>2</sup>,
             </span>
           </div>
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Meta</span>
-            <span class="author-block"><sup>1</sup>Princeton University</span>
+            <span class="author-block"><sup>2</sup>Princeton University</span>
           </div>
+          <br />
+          <div class="is-size-5 publication-authors">
+            <b>Sunday July 9 14:00 - 17:30 (EDT) @ Metropolitan West</b>
+          </div>
+          
         </div>
       </div>
     </div>
@@ -75,7 +80,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">About This tutorial</h2>
         <div class="content has-text-justified">
-          <p>
+          <!--<p>
             Language models (LMs) such as GPT-3 (Brown et al., 2020) and PaLM (Chowdhery et al., 2022) have shown impressive abilities in a range of natural language processing (NLP) tasks. 
             However, relying solely on their parameters to encode a wealth of world knowledge requires a prohibitively large number of parameters and hence massive computing, and they often struggle to learn long-rail knowledge (Roberts et al., 2020; Kandpal et al., 2022; Mallen et al., 2022). 
             Moreover, these parametric LMs are fundamentally incapable of adapting over time (De Cao et al., 2021; Lazaridou et al., 2021; Kasai et al., 2022), often hallucinate (Shuster et al., 2021), and may leak private data from the
@@ -87,8 +92,19 @@
             advances in retrieval-based LMs. We will start
             by first providing preliminaries covering the foundations of LM (e.g., masked LMs, autoregressive LMs) and retrieval systems (e.g., nearest-neighbor search methods widely used in neural retrieval systems; Karpukhin et al. 2020). We will then focus
             on recent progress in architectures, learning approaches, and applications of retrieval-based LMs.
+          </p>-->
+          <p>
+            Language models (LMs) such as GPT-3 and PaLM have shown impressive abilities in a range of natural language processing (NLP) tasks. 
+            However, relying solely on their parameters to encode a wealth of world knowledge requires a prohibitively large number of parameters and hence massive computing, and they often struggle to learn long-rail knowledge.
+            Moreover, these parametric LMs are fundamentally incapable of adapting over time, often hallucinate, and may leak private data from the
+            training corpus. To overcome these limitations, there has been growing interest in retrieval-based LMs 
+            which incorporate a non-parametric datastore (e.g., text chunks from an external corpus) with their parametric counterparts. Retrieval-based LMs can outperform LMs without retrieval by a large margin with much fewer parameters, can update their knowledge by replacing their retrieval corpora, and provide citations for users to easily verify and evaluate the predictions.
           </p>
           <p>
+            In this tutorial, we aim to provide a comprehensive and coherent overview of recent
+            advances in retrieval-based LMs. We will start
+            by first providing preliminaries covering the foundations of LMs and retrieval systems. We will then focus
+            on recent progress in architectures, learning approaches, and applications of retrieval-based LMs.
           </p>
         </div>
       </div>
@@ -112,6 +128,77 @@
         </p>
 
         <div class="content has-text-justified">
+
+          <style type="text/css">
+          .tg  {border-collapse:collapse;border-spacing:0;}
+          .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+            overflow:hidden;padding:10px 5px;word-break:normal;}
+          .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+            font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+          .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+          .tg .tg-0lax{text-align:left;vertical-align:top}
+          </style>
+          <table class="tg">
+          <thead>
+            <tr>
+              <th class="tg-0pky">Time</th>
+              <th class="tg-0lax">Section</th>
+              <th class="tg-0lax">Presenter</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tg-0lax">14:00—14:15</td>
+              <td class="tg-0lax">Section 1: Introduction & Motivation</td>
+              <td class="tg-0lax">Danqi</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">14:15—14:30</td>
+              <td class="tg-0lax">Section 2: Definition & Preliminaries</td>
+              <td class="tg-0lax">Sewon</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">14:30—15:05</td>
+              <td class="tg-0lax">Section 3: Retrieval-based LMs: Architecture</td>
+              <td class="tg-0lax">Sewon</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">15:05—15:20</td>
+              <td class="tg-0lax">Section 4: Retrieval-based LMs: Training</td>
+              <td class="tg-0lax">Zexuan</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">15:20—15:30</td>
+              <td class="tg-0lax">QnA Session I</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">15:30—16:00</td>
+              <td class="tg-0lax">Coffee break</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">16:00—16:30</td>
+              <td class="tg-0lax">Section 4 (Cont’d): Retrieval-based LMs: Training</td>
+              <td class="tg-0lax">Zexuan</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">16:30—17:10</td>
+              <td class="tg-0lax">Section 5: Retrieval-based LMs: Application</td>
+              <td class="tg-0lax">Akari</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">17:10—17:20</td>
+              <td class="tg-0lax">Section 6: Extension: Multilingual & Multimodal</td>
+              <td class="tg-0lax">Akari</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">17:20—17:30</td>
+              <td class="tg-0lax">Conclusion + QnA Session II</td>
+              <td class="tg-0lax"></td>
+            </tr>
+          </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -120,14 +207,74 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Paper Lists</h2>
-        <b>Short lists</b>
-        <p>
-        </p>
 
-        <b>Other Papers covered in tutorial</b>
+        <p><b>Bold</b> indicates shortlist.</p>
+
+        <br />
         
-        <div class="content has-text-justified">
-        </div>
+        
+        <h3 class="title is-5">Section 3: Architecture</h3>
+
+        <ul>
+          <li><a href="https://arxiv.org/abs/2002.08909"><b>REALM: Retrieval-Augmented Language Model Pre-Training</b></a></li>
+          <li><a href="https://arxiv.org/pdf/2302.00083.pdf"><b>In-Context Retrieval-Augmented Language Models</b></a></li>
+          <li><a href="https://arxiv.org/pdf/2301.12652.pdf"><b>REPLUG: Retrieval-Augmented Black-Box Language Models</b></a></li>
+          <li><a href="https://arxiv.org/pdf/2112.04426.pdf"><b>Improving language models by retrieving from trillions of tokens</b></a></li>
+          <li><a href="https://arxiv.org/pdf/1911.00172.pdf"><b>Generalization through Memorization: Nearest Neighbor Language Models</b></a></li>
+          <li><a href="https://arxiv.org/abs/2305.06983">Active Retrieval Augmented Generation</a></li>
+          <li><a href="https://arxiv.org/abs/2109.04212">Efficient Nearest Neighbor Language Models</a></li>
+          <li><a href="https://arxiv.org/abs/2210.15859">You can't pick your neighbors, or can you? When and how to rely on retrieval in the kNN-LM</a></li>
+          <li><a href="https://arxiv.org/abs/2201.12431">Neuro-Symbolic Language Modeling with Automaton-augmented Retrieval</a></li>
+          <li><a href="https://arxiv.org/abs/2004.07202">Entities as Experts: Sparse Memory Access with Entity Supervision</a></li>
+          <li><a href="https://arxiv.org/abs/2110.06176">Mention Memory: incorporating textual knowledge into Transformers through entity mention attention</a></li>
+        </ul>
+        
+        <br />
+
+        <h3 class="title is-5">Section 4: Training</h3>
+
+        <ul>
+          <li><a href="https://arxiv.org/abs/2004.04906"><b>Dense Passage Retrieval for Open-Domain Question Answering</b></a></li>
+          <li><a href="https://arxiv.org/abs/2112.04426"><b>Improving language models by retrieving from trillions of tokens</b></a> (also in Section 3)</li>
+          <li><a href="https://arxiv.org/abs/2205.12674"><b>Training Language Models with Memory Augmentation</b></a></li>
+          <li><a href="https://arxiv.org/abs/2208.03299"><b>Atlas: Few-shot Learning with Retrieval Augmented Language Models</b></a></li>
+          <li><a href="https://arxiv.org/pdf/2112.09118.pdf">Unsupervised Dense Information Retrieval with Contrastive Learning</a></li>
+          <li><a href="https://arxiv.org/abs/2212.01349">Nonparametric Masked Language Modeling</a></li>
+          <li><a href="https://arxiv.org/pdf/2302.00083.pdf">In-Context Retrieval-Augmented Language Models</a> (also in Section 3)</li>
+          <li><a href="https://arxiv.org/pdf/2301.12652.pdf">REPLUG: Retrieval-Augmented Black-Box Language Models</a> (also in Section 3)</li>
+          <li><a href="https://arxiv.org/pdf/2112.04426.pdf">Improving language models by retrieving from trillions of tokens</a> (also in Section 3)</li>
+          <li><a href="https://arxiv.org/abs/2306.13421">Long-range Language Modeling with Self-retrieval</a></li>
+          <li><a href="https://arxiv.org/abs/2305.01625">Unlimiformer: Long-Range Transformers with Unlimited Length Input</a></li>
+        </ul>
+
+        <br />
+
+        <h3 class="title is-5">Section 5: Application</h3>
+
+        <ul>
+          <li><a href="https://arxiv.org/abs/2208.03299"><b>Atlas: Few-shot Learning with Retrieval Augmented Language Models</b></a> (also in Section 4)</li>
+          <li><a href="https://arxiv.org/abs/2212.14024"><b>Demonstrate-Search-Predict: Composing retrieval and language models for knowledge-intensive NLP</b></a></li>
+          <li><a href="https://arxiv.org/abs/2205.13792"><b>kNN-Prompt: Nearest Neighbor Zero-Shot Inference</b></a></li>
+          <li><a href="https://arxiv.org/abs/2212.08037"><b>Attributed Question Answering: Evaluation and Modeling for Attributed Large Language Models</b></a></li>
+          <li><a href="https://arxiv.org/abs/2304.09848">Evaluating Verifiability in Generative Search Engines</a></li>
+          <li><a href="https://arxiv.org/abs/2305.14627">Enabling Large Language Models to Generate Text with Citations</a></li>
+          <li><a href="https://arxiv.org/abs/2203.11147">Teaching language models to support answers with verified quotes</a></li>
+          <li><a href="https://arxiv.org/abs/2305.06311">Automatic evaluations of Attributions of large language models</a></li>
+          <li><a href="https://arxiv.org/abs/2212.10511">When Not to Trust Language Models: Investigating Effectiveness of Parametric and Non-Parametric Memories</a></li>
+          <li><a href="https://arxiv.org/abs/2210.08726">RARR: Researching and Revising What Language Models Say, Using Language Models</a></li>
+          <li><a href="https://arxiv.org/abs/2305.14251">FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation</a></li>
+          <li><a href="https://arxiv.org/abs/2305.14625">kNN-LM Does Not Improve Open-ended Text Generation</a></li>
+          <li><a href="https://arxiv.org/abs/2212.09146">Can Retriever-augmented Language Models Reason? The Blame Game between the Retriever and the Language Model</a></li>
+        </ul>
+
+        <br />
+
+        <h3 class="title is-5">Section 6: Extension</h3>
+        
+        <ul>
+          <li><a href="https://arxiv.org/abs/2107.11976">One Question Answering Model for Many Languages with Cross-lingual Dense Passage Retrieval</a></li>
+          <li><a href="https://arxiv.org/abs/2211.12561">Retrieval-Augmented Multimodal Language Modeling</a></li>
+        </ul>
       </div>
     </div>
 
@@ -148,11 +295,11 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Asai, Akari and Min, Sewon and Zhong, Zexuan and Chen, Danqi},
-  title     = {ACL 2023 Tutorial: Retrieval-based LMs and Applications},
-  journal   = {ACL 2023},
-  year      = {2023},
+    <pre><code>@article{ asai2023retrieval,
+  author    = { Asai, Akari and Min, Sewon and Zhong, Zexuan and Chen, Danqi },
+  title     = { ACL 2023 Tutorial: Retrieval-based LMs and Applications },
+  journal   = { ACL 2023 },
+  year      = { 2023 },
 }</code></pre>
   </div>
 </section>
